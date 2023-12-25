@@ -1,0 +1,10 @@
+---
+import Home from "../components/Home.astro";
+import { Pricing } from "../components/Pricing.jsx";
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout title="Snake Pole Fitness">
+  <Home />
+  <Pricing client:visible />
+</Layout>
