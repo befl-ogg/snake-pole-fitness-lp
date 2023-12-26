@@ -3,48 +3,55 @@ import { useState } from "preact/hooks";
 import CustomPricingCard from './CustomPricingCard';
 
 export const Pricing = () => {
-  const [isMonthly, setIsMonthly] = useState(true);
-  const [isModalOpen, setIsModalOpen] = useState(false);
 
+  const [selectedDuration, setSelectedDuration] = useState('Mensual'); 
+  const durations = ['Mensual', 'Trimestral', 'Semestral', 'Anual'];
+  const discounts = [0, 10, 15, 20]; 
+  
   const basicPricing = {
     title: 'BÁSICO',
-    subtitle: 'Asiste al estudio de tu elección',
+    subtitle: 'Tu viaje en el pole dance comienza aquí.',
     backgroundColor: 'bg-inherit',
-    pricing: '$550.00',
-    benefits: ['8 clases mensuales', 'Horario abierto'],
-    arrowColor: '#349A8D'
+    pricing: `$${(650.00 * (1 - discounts[durations.indexOf(selectedDuration)] / 100)).toFixed(2)}`,
+    benefits: ['8 clases mensuales', 'Horario por cita', 'Derecho a 1 reposición por mes'],
+    arrowColor: '#349A8D',
+    discount: `${discounts[durations.indexOf(selectedDuration)]}`
   };
-
+    
   const completePricing = {
     title: 'COMPLETO',
-    subtitle: 'Asiste a cualquiera de nuestros estudios',
+    subtitle: 'Descubre la versión completa de ti misma.',
     backgroundColor: 'bg-inherit',
-    pricing: '$700.00',
-    benefits: ['12 clases mensuales', 'Horario abierto', 'Acceso a cualquier estudio SnakePoleFitness'],
-    arrowColor: '#349A8D'
+    pricing: `$${(800.00 * (1 - discounts[durations.indexOf(selectedDuration)] / 100)).toFixed(2)}`,
+    benefits: ['12 clases mensuales', 'Horario por cita', 'Derecho a 2 reposición por mes'],
+    arrowColor: '#349A8D',
+    discount: `${discounts[durations.indexOf(selectedDuration)]}`
   };
 
   const intensivePricing = {
-    title: 'INTENSIVO',
-    subtitle: 'Asiste a cualquiera de nuestros estudios',
+    title: 'ILIMITADO',
+    subtitle: 'Explora tu pasión en cualquier estudio SnakePoleFitness.',
     backgroundColor: 'bg-[#282936]',
-    pricing: '$900.00',
-    benefits: ['20 clases mensuales', 'Horario abierto', 'Acceso a cualquier estudio SnakePoleFitness'],
-    arrowColor: '#349A8D'
+    pricing: `$${(1400.00 * (1 - discounts[durations.indexOf(selectedDuration)] / 100)).toFixed(2)}`,
+    benefits: ['Clases ilimitadas', 'Horario abierto', 'Acceso a cualquier estudio SnakePoleFitness'],
+    arrowColor: '#349A8D',
+    discount: `${discounts[durations.indexOf(selectedDuration)]}`
   };
 
   const fitPricing = {
     title: 'SUPERFIT',
-    subtitle: 'Maximiza tu desempeño sin perder tus clases favoritas',
+    subtitle: 'Eleva tu rendimiento y nutre tu cuerpo.',
     backgroundColor: 'bg-[#349A8D]',
-    pricing: '$1200.00',
+    pricing: `$${(1200.00 * (1 - discounts[durations.indexOf(selectedDuration)] / 100)).toFixed(2)}`,
     benefits: ['16 clases mensuales', 'Consultas nutricionales', 'Horario abierto', 'Acceso a cualquier estudio SnakePoleFitness'],
-    arrowColor: '#8D366F'
+    arrowColor: '#8D366F',
+    discount: `${discounts[durations.indexOf(selectedDuration)]}`
   };
 
-  const handleChange = () => {
-    setIsMonthly(!isMonthly);
+  const handleDurationChange = (durationIndex) => {
+    setSelectedDuration(durations[durationIndex]);
   };
+  
 
   return (
     <section className="w-screen flex justify-center bg-customDarkBg2 relative">
@@ -62,25 +69,18 @@ export const Pricing = () => {
               <p className="mb-6 text-white">
               El plan es la duración de tu membresía.
               </p>
-              <label className="mx-auto bg-customDarkBg3 relative flex justify-between items-center group text-xl w-44 h-12 rounded-lg pr-36 pl-1 cursor-pointer">
-                <input
-                  type="checkbox"
-                  className="peer appearance-none"
-                  checked={!isMonthly}
-                  onChange={handleChange}
-                />
-                <span className="h-8 w-[5.5rem] flex items-center pr-2 bg-customDarkBg3 after:rounded-lg duration-300 ease-in-out  after:w-[30rem] after:h-10  after:bg-customPrimary   after:shadow-md after:duration-300 peer-checked:after:translate-x-[5.5rem] cursor-pointer"></span>
-                <div className="flex absolute text-white text-sm font-bold">
-                  <div
-                    className={
-                      isMonthly ? "mr-9 ml-3" : "mr-9 ml-3 text-gray-400"
-                    }
-                  >
-                    Monthly
-                  </div>
-                  <div className={isMonthly && "text-gray-400"}>Yearly</div>
+              <label className="text-center justify-center bg-[#282936] relative flex justify-between items-center group text-xl rounded-full cursor-pointer py-3 px-5">
+              {durations.map((duration, index) => (
+                <div
+                  key={duration}
+                  className={`flex items-center mr-3 cursor-pointer ${selectedDuration === duration ? "text-white font-bold bg-[#8D366F] rounded-full p-3" : "text-gray-400"}`}
+                  onClick={() => handleDurationChange(index)}
+                >
+                  {duration}
                 </div>
+              ))}
               </label>
+
             </div>
             <div className="flex flex-row w-full gap-10 max-w-56 min-w-56">
               <CustomPricingCard {...basicPricing} />
