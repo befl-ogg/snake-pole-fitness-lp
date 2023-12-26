@@ -82,7 +82,7 @@ export const Pricing = () => {
               </label>
 
             </div>
-            <div className="flex flex-row w-full gap-10 max-w-56 min-w-56">
+            <div className="flex flex-row w-full gap-10 min-w-56 flex flex-col sm:flex-row items-center">
               <CustomPricingCard {...basicPricing} />
               <CustomPricingCard {...completePricing} />
               <CustomPricingCard {...intensivePricing} />
