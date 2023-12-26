@@ -13,8 +13,8 @@ const CustomPricingCard = ({ title, subtitle, backgroundColor, pricing, benefits
             {subtitle}
           </p>
           <div class="flex flex-col justify-start text-center">
-          {discount && (
-            <div>{discount}</div>
+          {discount !== undefined && discount !== null && discount !== false && discount != 0 && (
+            <div class="text-[#8D366F] font-bold">-{discount}%</div>
           )}
             <div class="text-4xl sm:text-4xl font-bold text-white mt-4 mr-2">{pricing}</div>
           </div>
