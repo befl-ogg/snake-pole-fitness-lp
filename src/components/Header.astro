@@ -1,0 +1,25 @@
+---
+import Logo from "./Logo.astro";
+const navbarLinks = [
+  { label: "Inicio", href: "#home", ariaLabel: "Inicio" },
+  { label: "Membresías", href: "#pricing", ariaLabel: "Membresías" },
+  { label: "Clases", href: "#clases", ariaLabel: "Clases" },
+  { label: "Dudas", href: "#faqs", ariaLabel: "Dudas" },
+  { label: "Contacto", href: "#contact", ariaLabel: "Contacto   " },
+];
+---
+
+<header>
+  <div class="w-full flex flex-row">
+    <Logo />
+    <nav class="flex flex-row justify-end items-center w-full text-center gap-4 px-5 md:gap-10">
+      {
+        navbarLinks.map(({ href, label, ariaLabel }) => (
+          <a class="text-white" href={href} aria-label={ariaLabel}>
+            {label}
+          </a>
+        ))
+      }
+    </nav>
+  </div>
+</header>
