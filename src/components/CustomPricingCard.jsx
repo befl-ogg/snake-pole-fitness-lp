@@ -2,7 +2,7 @@
 
 const CustomPricingCard = ({ title, subtitle, backgroundColor, pricing, benefits, discount, arrowColor }) => {
   return (
-    <div class="flex flex-wrap flex-col lg:flex-row items-center max-w-56 min-w-56">
+    <div class="flex flex-wrap flex-col md:flex-row items-center max-w-56 min-w-56">
       <div class=" max-w-56 min-w-fit">
         <div class={`p-0 rounded-3xl ${backgroundColor}`}>
         <br> </br>

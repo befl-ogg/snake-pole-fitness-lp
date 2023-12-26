@@ -9,7 +9,7 @@ const navbarLinks = [
 ];
 ---
 
-<header>
+<header class="sticky-navbar sm:sticky">
   <div class="w-full flex flex-row">
     <Logo />
     <nav class="flex flex-row justify-end items-center w-full text-center gap-4 px-5 md:gap-10">
@@ -23,3 +23,13 @@ const navbarLinks = [
     </nav>
   </div>
 </header>
+
+<style>
+  .sticky-navbar {
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #1c1c1c;
+    z-index: 1000;
+  }
+</style>
