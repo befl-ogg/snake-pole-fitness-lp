@@ -2,32 +2,31 @@
 import CustomButton from "./CustomButton.astro";
 ---
 
-<div class="w-full flex flex-col gap-5 place-items-center sm:flex-row md:flex-row" id="home">
-  <div class="flex flex-col w-full px-20 gap-3">
-    <div class="text-white text-5xl">
+<div class="flex flex-col w-full items-center sm:flex-row sm:p-10" id="home">
+  <div class="">
+    <div class="text-white text-4xl text-center py-5 sm:text-5xl">
       <p>SnakePoleFitness</p>
     </div>
-    <div class="flex flex-col gap-5">
-      <div class="gap-2">
-        <div class="text-white text-2xl">
+    <div class="">
+      <div class="">
+        <div class="text-white text-center text-2xl">
           <p>Estudio de Pole Dance & Fitness</p>
         </div>
-        <div class="text-white text-1xl">
+        <div class="text-white text-center text-wrap text-1xl">
           <p>Clases grupales y privadas, nutrición personalizada y más!</p>
         </div>
       </div>
 
-      <div class="flex flex-row gap-10 justify-center w-full">
+      <div class="flex gap-10 p-10">
         <CustomButton title="INSCRÍBETE" backgroundColor="#8D366F" href="#pricing" />
         <CustomButton title="HORARIOS" backgroundColor="#349A8D" href="#pricing" />
       </div>
     </div>
   </div>
-  <div class="flex justify-end">
+  <div class="">
     <img src="https://i.imgur.com/fKNnnes.png" alt="" class="team" />
   </div>
 </div>
-<!-- <div class="flex justify-start text-white">Cómo llegar</div> -->
 
 <style>
   .team {

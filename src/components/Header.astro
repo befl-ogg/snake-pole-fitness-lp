@@ -9,10 +9,13 @@ const navbarLinks = [
 ];
 ---
 
-<header class="sticky-navbar sm:sticky">
-  <div class="w-full flex flex-row">
-    <Logo />
-    <nav class="flex flex-row justify-end items-center w-full text-center gap-4 px-5 md:gap-10">
+<header class="sticky-navbar sticky">
+  <div class="w-full flex flex-col justify-center sm:flex-row">
+    <div class="w-full flex justify-center sm:pl-10 sm:justify-start">
+      <Logo />
+    </div>
+
+    <nav class="flex flex-row justify-center items-center w-full text-center gap-5 p-5 sm:justify-end sm:gap-10">
       {
         navbarLinks.map(({ href, label, ariaLabel }) => (
           <a class="text-white" href={href} aria-label={ariaLabel}>
