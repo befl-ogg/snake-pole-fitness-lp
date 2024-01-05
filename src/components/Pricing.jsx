@@ -13,7 +13,10 @@ export const Pricing = () => {
     subtitle: 'Tu viaje en el pole dance comienza aquí.',
     backgroundColor: 'bg-inherit',
     pricing: `$${(650.00 * (1 - discounts[durations.indexOf(selectedDuration)] / 100)).toFixed(2)}`,
-    benefits: ['8 clases mensuales', 'Agenda tu horario', '1 reposición por mes'],
+    benefits: ['8 clases mensuales', 
+    'Agenda tu horario', 
+    '1 reposición por mes',
+    selectedDuration !== 'Mensual' ? 'Inscripción condonada' : null].filter(Boolean),
     arrowColor: '#349A8D',
     discount: `${discounts[durations.indexOf(selectedDuration)]}`
   };
@@ -23,7 +26,7 @@ export const Pricing = () => {
     subtitle: 'Descubre la versión completa de ti misma.',
     backgroundColor: 'bg-inherit',
     pricing: `$${(800.00 * (1 - discounts[durations.indexOf(selectedDuration)] / 100)).toFixed(2)}`,
-    benefits: ['12 clases mensuales', 'Agenda tu horario', '2 reposiciones por mes', 'Inscripción condonada'],
+    benefits: ['12 clases mensuales', 'Agenda tu horario', '2 reposiciones por mes', selectedDuration !== 'Mensual' ? 'Inscripción condonada' : null].filter(Boolean),
     arrowColor: '#349A8D',
     discount: `${discounts[durations.indexOf(selectedDuration)]}`
   };
@@ -33,7 +36,7 @@ export const Pricing = () => {
     subtitle: 'Explora tu pasión en tu estudio SnakePoleFitness favorito.',
     backgroundColor: 'bg-[#282936]',
     pricing: `$${(1400.00 * (1 - discounts[durations.indexOf(selectedDuration)] / 100)).toFixed(2)}`,
-    benefits: ['Clases ilimitadas', 'Horario abierto', 'Inscripción condonada'],
+    benefits: ['Clases ilimitadas', 'Horario abierto', selectedDuration !== 'Mensual' ? 'Inscripción condonada' : null].filter(Boolean),
     arrowColor: '#349A8D',
     discount: `${discounts[durations.indexOf(selectedDuration)]}`
   };
@@ -43,7 +46,7 @@ export const Pricing = () => {
     subtitle: 'Eleva tu rendimiento y nutre tu cuerpo.',
     backgroundColor: 'bg-[#349A8D]',
     pricing: `$${(1200.00 * (1 - discounts[durations.indexOf(selectedDuration)] / 100)).toFixed(2)}`,
-    benefits: ['16 clases mensuales', 'Consulta nutricional', 'Agenda tu horario', 'Inscripción condonada'],
+    benefits: ['16 clases mensuales', 'Consulta nutricional', 'Agenda tu horario', selectedDuration !== 'Mensual' ? 'Inscripción condonada' : null].filter(Boolean),
     arrowColor: '#8D366F',
     discount: `${discounts[durations.indexOf(selectedDuration)]}`
   };
