@@ -13,7 +13,7 @@ export const Pricing = () => {
     subtitle: 'Tu viaje en el pole dance comienza aquí.',
     backgroundColor: 'bg-inherit',
     pricing: `$${(650.00 * (1 - discounts[durations.indexOf(selectedDuration)] / 100)).toFixed(2)}`,
-    benefits: ['8 clases mensuales', 'Horario por cita', 'Derecho a 1 reposición por mes'],
+    benefits: ['8 clases mensuales', 'Agenda tu horario', '1 reposición por mes'],
     arrowColor: '#349A8D',
     discount: `${discounts[durations.indexOf(selectedDuration)]}`
   };
@@ -23,17 +23,17 @@ export const Pricing = () => {
     subtitle: 'Descubre la versión completa de ti misma.',
     backgroundColor: 'bg-inherit',
     pricing: `$${(800.00 * (1 - discounts[durations.indexOf(selectedDuration)] / 100)).toFixed(2)}`,
-    benefits: ['12 clases mensuales', 'Horario por cita', 'Derecho a 2 reposición por mes'],
+    benefits: ['12 clases mensuales', 'Agenda tu horario', '2 reposiciones por mes', 'Inscripción condonada'],
     arrowColor: '#349A8D',
     discount: `${discounts[durations.indexOf(selectedDuration)]}`
   };
 
   const intensivePricing = {
     title: 'ILIMITADO',
-    subtitle: 'Explora tu pasión en cualquier estudio SnakePoleFitness.',
+    subtitle: 'Explora tu pasión en tu estudio SnakePoleFitness favorito.',
     backgroundColor: 'bg-[#282936]',
     pricing: `$${(1400.00 * (1 - discounts[durations.indexOf(selectedDuration)] / 100)).toFixed(2)}`,
-    benefits: ['Clases ilimitadas', 'Horario abierto', 'Acceso a cualquier estudio SnakePoleFitness'],
+    benefits: ['Clases ilimitadas', 'Horario abierto', 'Inscripción condonada'],
     arrowColor: '#349A8D',
     discount: `${discounts[durations.indexOf(selectedDuration)]}`
   };
@@ -43,7 +43,7 @@ export const Pricing = () => {
     subtitle: 'Eleva tu rendimiento y nutre tu cuerpo.',
     backgroundColor: 'bg-[#349A8D]',
     pricing: `$${(1200.00 * (1 - discounts[durations.indexOf(selectedDuration)] / 100)).toFixed(2)}`,
-    benefits: ['16 clases mensuales', 'Consultas nutricionales', 'Horario abierto', 'Acceso a cualquier estudio SnakePoleFitness'],
+    benefits: ['16 clases mensuales', 'Consulta nutricional', 'Agenda tu horario', 'Inscripción condonada'],
     arrowColor: '#8D366F',
     discount: `${discounts[durations.indexOf(selectedDuration)]}`
   };
